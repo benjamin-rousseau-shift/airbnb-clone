@@ -37,7 +37,7 @@ const SearchModal = () => {
 
     const Map = useMemo(() => dynamic(() => import('../Map'), {
         ssr: false
-    }),[location]);
+    }),[]);
 
     const onBack = useCallback(() => {
         setStep((value) => value - 1);
@@ -85,7 +85,7 @@ const SearchModal = () => {
         router.push(url);
 
 
-    }, [step,searchModal,location,guestCount,roomCount,bathroomCount,dateRange,onNext,params]);
+    }, [step,searchModal,location,guestCount,roomCount,bathroomCount,dateRange,onNext,params,router]);
 
     const actionLabel = useMemo(() => {
             if ( step === STEPS.INFO) {
